@@ -1,0 +1,88 @@
+<!-- /result.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Classificação</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos específicos para a página de resultado */
+        body {
+            background-color: #f0f0f0; /* Fundo leve para contraste */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .result-box {
+            background-color: #ffffff; /* Caixa branca */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .result-image {
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        .result-text {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333333;
+        }
+
+        .confidence {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #555555;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 500px) {
+            .result-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <div class="result-image" id="resultImage"></div>
+        <div class="result-text" id="resultText">Carregando...</div>
+        <div class="confidence" id="confidenceLevel"></div>
+        <button id="backButton">Voltar ao Formulário</button>
+        <!-- <br/>
+        <button id="logoutButton">Logout</button> -->
+        </div>
+
+    <script src="js/auth.js"></script> <!-- Verificação de autenticação -->
+    <script src="js/result.js"></script> <!-- Manipulação do resultado -->
+</body>
+</html>

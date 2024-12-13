@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "8a1a84e4-edd1-43df-99ff-0d5761415781",
+		"name": "FIAP - Mushroom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "384806"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"save auth\", function() {",
+									"    pm.response.to.have.jsonBody(\"access_token\")",
+									"    pm.globals.set(\"auth\", pm.response.json().access_token)",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}{{context}}/auth/login",
+							"host": [
+								"{{server}}{{context}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}{{context}}/auth/logout",
+							"host": [
+								"{{server}}{{context}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}{{context}}/user/list",
+							"host": [
+								"{{server}}{{context}}"
+							],
+							"path": [
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Flavio\",\n    \"email\": \"flavio.ramos@gmail.com\",\n    \"password\": \"123mudar\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}{{context}}/user/create",
+							"host": [
+								"{{server}}{{context}}"
+							],
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mushrooms",
+			"item": [
+				{
+					"name": "Train",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}{{context}}/mushroom/train",
+							"host": [
+								"{{server}}{{context}}"
+							],
+							"path": [
+								"mushroom",
+								"train"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Classify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cap-shape\": \"x\",\n    \"cap-surface\": \"s\",\n    \"cap-color\": \"n\",\n    \"bruises\": \"t\",\n    \"odor\": \"p\",\n    \"gill-attachment\": \"f\",\n    \"gill-spacing\": \"c\",\n    \"gill-size\": \"b\",\n    \"gill-color\": \"k\",\n    \"stalk-shape\": \"e\",\n    \"stalk-root\": \"e\",\n    \"stalk-surface-above-ring\": \"s\",\n    \"stalk-surface-below-ring\": \"s\",\n    \"stalk-color-above-ring\": \"w\",\n    \"stalk-color-below-ring\": \"w\",\n    \"veil-type\": \"p\",\n    \"veil-color\": \"w\",\n    \"ring-number\": \"o\",\n    \"ring-type\": \"p\",\n    \"spore-print-color\": \"n\",\n    \"population\": \"n\",\n    \"habitat\": \"g\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}{{context}}/mushroom/classify",
+							"host": [
+								"{{server}}{{context}}"
+							],
+							"path": [
+								"mushroom",
+								"classify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cap-shape\": \"x\",\n    \"cap-surface\": \"s\",\n    \"cap-color\": \"n\",\n    \"bruises\": \"t\",\n    \"odor\": \"p\",\n    \"gill-attachment\": \"f\",\n    \"gill-spacing\": \"c\",\n    \"gill-size\": \"b\",\n    \"gill-color\": \"k\",\n    \"stalk-shape\": \"e\",\n    \"stalk-root\": \"e\",\n    \"stalk-surface-above-ring\": \"s\",\n    \"stalk-surface-below-ring\": \"s\",\n    \"stalk-color-above-ring\": \"w\",\n    \"stalk-color-below-ring\": \"w\",\n    \"veil-type\": \"p\",\n    \"veil-color\": \"w\",\n    \"ring-number\": \"o\",\n    \"ring-type\": \"p\",\n    \"spore-print-color\": \"n\",\n    \"population\": \"n\",\n    \"habitat\": \"g\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}{{context}}/mushroom/history",
+							"host": [
+								"{{server}}{{context}}"
+							],
+							"path": [
+								"mushroom",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://127.0.0.1:5000"
+		},
+		{
+			"key": "context",
+			"value": "/api/v1"
+		}
+	]
+}

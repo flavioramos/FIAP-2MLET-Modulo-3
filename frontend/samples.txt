@@ -1,0 +1,83 @@
+P (51%)
+
+{
+    "cap-shape": "b",
+    "cap-surface": "s",
+    "cap-color": "w",
+    "bruises": "f",
+    "odor": "l",
+    "gill-attachment": "a",
+    "gill-spacing": "w",
+    "gill-size": "n",
+    "gill-color": "n",
+    "stalk-shape": "e",
+    "stalk-root": "e",
+    "stalk-surface-above-ring": "s",
+    "stalk-surface-below-ring": "s",
+    "stalk-color-above-ring": "w",
+    "stalk-color-below-ring": "w",
+    "veil-type": "p",
+    "veil-color": "w",
+    "ring-number": "o",
+    "ring-type": "p",
+    "spore-print-color": "n",
+    "population": "n",
+    "habitat": "g"
+}
+
+
+
+E
+
+{
+    "cap-shape": "b",
+    "cap-surface": "f",
+    "cap-color": "n",
+    "bruises": "t",
+    "odor": "p",
+    "gill-attachment": "a",
+    "gill-spacing": "c",
+    "gill-size": "b",
+    "gill-color": "k",
+    "stalk-shape": "e",
+    "stalk-root": "c",
+    "stalk-surface-above-ring": "f",
+    "stalk-surface-below-ring": "f",
+    "stalk-color-above-ring": "y",
+    "stalk-color-below-ring": "y",
+    "veil-type": "p",
+    "veil-color": "w",
+    "ring-number": "o",
+    "ring-type": "e",
+    "spore-print-color": "k",
+    "population": "a",
+    "habitat": "g"
+}
+
+
+P
+
+{
+    "cap-shape": "x",
+    "cap-surface": "s",
+    "cap-color": "n",
+    "bruises": "t",
+    "odor": "p",
+    "gill-attachment": "f",
+    "gill-spacing": "c",
+    "gill-size": "n",
+    "gill-color": "k",
+    "stalk-shape": "e",
+    "stalk-root": "e",
+    "stalk-surface-above-ring": "s",
+    "stalk-surface-below-ring": "s",
+    "stalk-color-above-ring": "w",
+    "stalk-color-below-ring": "w",
+    "veil-type": "p",
+    "veil-color": "w",
+    "ring-number": "o",
+    "ring-type": "p",
+    "spore-print-color": "k",
+    "population": "s",
+    "habitat": "u"
+}
