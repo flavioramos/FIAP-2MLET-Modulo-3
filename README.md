@@ -1,8 +1,8 @@
-FIAP - Machine Learning Engineering - Tech Challenge Módulo 3
+# FIAP - Machine Learning Engineering - Tech Challenge Módulo 3
 
 Sistema com implementação de treinamento supervisionado, consumindo dataset Mushroom do UCI Machine Learning Repository.
 
-Estrutura:
+## Estrutura:
 
 - API: Servidor em Flask (Python) para realizar download do dataset, treinar o modelo e fornecer a funcionaidade de predição através de API.
   - Depois de instaladas as dependências (pip3 -r requirements.txt), execute os comandos: 
@@ -18,7 +18,7 @@ Estrutura:
 - Postman: Arquivo com a documentação da API.
 
 
-Dependências:
+## Dependências:
 
 - Python 3
 - Flask
